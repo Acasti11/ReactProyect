@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Pokemon';
+  src: url('../../fuentes/Pokemon Solid.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.navheader {
+  background-color: white;
+  flex: 2;
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1em;
+  padding: 4em 1em;
+  color: black;
+  font-size: xx-larger;
+  font-weight: bold;
+  box-shadow: 4px 0px 10px grey;
+}
+
+.Logo {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+}
+.Logotext {
+  font-family: 'Pokemon', sans-serif;
+  font-size: xx-large;
+}
+.Logotext a {
+  color: black;
+  text-decoration: none;
+}
+.LogoIcon {
+  border: 0.25em solid rgb(255, 255, 255);
+  border-radius: 100%;
+  padding: 0.55em;
+}
+
+.LogoIconD {
+  border: 0.25em solid;
+  border-radius: 100%;
+  padding: 0.55em;
+  position: relative;
+}
+
+.black {
+  border-color: black;
+}
+
+.LogoIconD::after {
+  content: '';
+  background: black;
+  width: 0.5em;
+  height: 0.2em;
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+}
+.black::after {
+  background-color: black;
+}
+
+.LogoIcon div::before {
+  content: '';
+  background: black;
+  width: 0.7em;
+  height: 0.2em;
+  position: absolute;
+  top: 50%;
+  left: 150%;
+  transform: translate(-50%, -50%);
+}
+
+.black::before {
+  background-color: black;
+}
+
+.navlinks {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4em;
+  text-transform: capitalize;
+  font-size: xx-large;
+}
+.navlinks a {
+  display: inline-block;
+  color: black;
+  transition: transform 0.2s ease;
+}
+.navlinks a:hover {
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: grey;
+}
+footer {
+  padding: 1em;
+  background-color: black;
+  color: white;
+  flex: 1;
+  justify-self: flex-end;
+  text-align: center;
+  max-height: 5%;
+}
+
+@media (min-width: 1080px) {
+  .navbar {
+    padding: 1em;
+  }
+  .navlinks {
+    font-size: X-large;
+  }
+  .Logotext {
+    font-size: x-large;
+  }
+}
