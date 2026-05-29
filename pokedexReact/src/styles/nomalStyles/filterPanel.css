@@ -1,0 +1,126 @@
+/* Panel fijo a la izquierda - grid de botones */
+#filter_container {
+  position: fixed;
+  left: 5em;
+  top: 10em;
+  z-index: 9999;
+  width: 220px;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.25);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  backdrop-filter: blur(6px);
+  transition: left 0.2s ease;
+}
+
+/* Estado colapsado: solo se muestra el botón principal */
+#filter_container.collapsed {
+  width: 56px;
+  padding: 6px;
+  align-items: center;
+  left: 6px;
+}
+/* When collapsed, hide all buttons except the main toggle */
+#filter_container.collapsed button:not(#filter_button) {
+  display: none;
+}
+
+/* Botones internos (no-type usarán fondo por separado) */
+#filter_container button:not(.type-button) {
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+}
+#filter_container button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+/* Botones internos (no aplicará a botones de tipo para dejarles su color) */
+#filter_container button:not(.type-button) {
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Botones de tipo - dejan que las clases de tipo definan el fondo */
+#filter_container .type-button {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+/* Active (selected) state */
+#filter_container .type-button.active {
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.6),
+    0 4px 16px rgba(0, 0, 0, 0.3) inset;
+  filter: brightness(1.15);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Checkmark para botones activos */
+#filter_container .type-button.active::after {
+  content: '✓';
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Botón principal (toggle) — pequeño estilo distintivo */
+#filter_button {
+  background: #ffcc00;
+  color: #111;
+}
+
+/* Scrollbar pequeño y discreto */
+#filter_container::-webkit-scrollbar {
+  width: 8px;
+}
+#filter_container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  #filter_container {
+    width: 44px;
+    padding: 6px;
+  }
+  #filter_container button {
+    display: none;
+  }
+  #filter_container.collapsed button {
+    display: none;
+  }
+  #filter_container #filter_button {
+    display: block;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+  }
+}

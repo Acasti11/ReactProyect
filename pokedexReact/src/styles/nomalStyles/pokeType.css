@@ -1,0 +1,242 @@
+:root {
+  --color-Fire: #ee8130;
+  --color-Grass: #78c850;
+  --color-Poison: #a040a0;
+  --color-Water: #4890e0;
+  --color-Electric: #f8d030;
+  --color-Ice: #98d8d8;
+  --color-Fighting: #c03028;
+  --color-Ground: #e0c068;
+  --color-Flying: #a890f0;
+  --color-Psychic: #f85888;
+  --color-Bug: #a8b820;
+  --color-Rock: #b8a038;
+  --color-Ghost: #705898;
+  --color-Dragon: #7038f8;
+  --color-Dark: #705848;
+  --color-Steel: #b8b8d0;
+  --color-Fairy: #ee99ac;
+}
+
+.Fire,
+.pokeCard_type.Fire {
+  background-color: var(--color-Fire) !important;
+}
+.pokeCard.Fire {
+  background-color: var(--color-Fire);
+}
+
+.Grass,
+.pokeCard_type.Grass {
+  background-color: var(--color-Grass) !important;
+}
+.pokeCard.Grass {
+  background-color: var(--color-Grass);
+}
+
+.Poison,
+.pokeCard_type.Poison {
+  background-color: var(--color-Poison) !important;
+}
+.pokeCard.Poison {
+  background-color: var(--color-Poison);
+}
+
+.Water,
+.pokeCard_type.Water {
+  background-color: var(--color-Water) !important;
+}
+.pokeCard.Water {
+  background-color: var(--color-Water);
+}
+
+.Electric,
+.pokeCard_type.Electric {
+  background-color: var(--color-Electric) !important;
+}
+.pokeCard.Electric {
+  background-color: var(--color-Electric);
+}
+
+.Ice,
+.pokeCard_type.Ice {
+  background-color: var(--color-Ice) !important;
+}
+.pokeCard.Ice {
+  background-color: var(--color-Ice);
+}
+
+.Fighting,
+.pokeCard_type.Fighting {
+  background-color: var(--color-Fighting) !important;
+}
+.pokeCard.Fighting {
+  background-color: var(--color-Fighting);
+}
+
+.Ground,
+.pokeCard_type.Ground {
+  background-color: var(--color-Ground) !important;
+}
+.pokeCard.Ground {
+  background-color: var(--color-Ground);
+}
+
+.Flying,
+.pokeCard_type.Flying {
+  background-color: var(--color-Flying) !important;
+}
+.pokeCard.Flying {
+  background-color: var(--color-Flying);
+}
+
+.Psychic,
+.pokeCard_type.Psychic {
+  background-color: var(--color-Psychic) !important;
+}
+.pokeCard.Psychic {
+  background-color: var(--color-Psychic);
+}
+
+.Bug,
+.pokeCard_type.Bug {
+  background-color: var(--color-Bug) !important;
+}
+.pokeCard.Bug {
+  background-color: var(--color-Bug);
+}
+
+.Rock,
+.pokeCard_type.Rock {
+  background-color: var(--color-Rock) !important;
+}
+.pokeCard.Rock {
+  background-color: var(--color-Rock);
+}
+
+.Ghost,
+.pokeCard_type.Ghost {
+  background-color: var(--color-Ghost) !important;
+}
+.pokeCard.Ghost {
+  background-color: var(--color-Ghost);
+}
+
+.Dragon,
+.pokeCard_type.Dragon {
+  background-color: var(--color-Dragon) !important;
+}
+.pokeCard.Dragon {
+  background-color: var(--color-Dragon);
+}
+
+.Dark,
+.pokeCard_type.Dark {
+  background-color: var(--color-Dark) !important;
+}
+.pokeCard.Dark {
+  background-color: var(--color-Dark);
+}
+
+.Steel,
+.pokeCard_type.Steel {
+  background-color: var(--color-Steel) !important;
+}
+.pokeCard.Steel {
+  background-color: var(--color-Steel);
+}
+
+.Fairy,
+.pokeCard_type.Fairy {
+  background-color: var(--color-Fairy) !important;
+}
+.pokeCard.Fairy {
+  background-color: var(--color-Fairy);
+}
+.Normal,
+.pokeCard_type.Normal {
+  background-color: var(--color-Steel) !important;
+}
+.pokeCard.Normal {
+  background-color: var(--color-Steel);
+}
+.Electric,
+.Ice,
+.Steel,
+.pokeCard_type.Electric,
+.pokeCard_type.Ice,
+.pokeCard_type.Steel {
+  color: #333;
+}
+
+.pokeCard.Fire {
+  background-color: var(--color-Fire);
+}
+
+.pokeCard.Grass {
+  background-color: var(--color-Grass);
+}
+
+.pokeCard.Poison {
+  background-color: var(--color-Poison);
+}
+
+.pokeCard.Water {
+  background-color: var(--color-Water);
+}
+
+.pokeCard.Electric {
+  background-color: var(--color-Electric);
+}
+
+.pokeCard.Ice {
+  background-color: var(--color-Ice);
+}
+
+.pokeCard.Fighting {
+  background-color: var(--color-Fighting);
+}
+
+.pokeCard.Ground {
+  background-color: var(--color-Ground);
+}
+
+.pokeCard.Flying {
+  background-color: var(--color-Flying);
+}
+
+.pokeCard.Psychic {
+  background-color: var(--color-Psychic);
+}
+
+.pokeCard.Bug {
+  background-color: var(--color-Bug);
+}
+
+.pokeCard.Rock {
+  background-color: var(--color-Rock);
+}
+
+.pokeCard.Ghost {
+  background-color: var(--color-Ghost);
+}
+
+.pokeCard.Dragon {
+  background-color: var(--color-Dragon);
+}
+
+.pokeCard.Dark {
+  background-color: var(--color-Dark);
+}
+
+.pokeCard.Steel {
+  background-color: var(--color-Steel);
+}
+
+.pokeCard.Fairy {
+  background-color: var(--color-Fairy);
+}
+
+.pokeCard.Normal {
+  background-color: var(--color-Steel);
+}

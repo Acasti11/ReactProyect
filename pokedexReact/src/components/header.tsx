@@ -1,13 +1,14 @@
 import React from "react";
-import "./header.css"
+import { NavLink } from "react-router-dom";
+import "../styles/nomalStyles/navbar.css"
 
-type LinkItem = { label: string; href: string };
+type LinkItem = { label: string; to: string };
 
 const NAV_LINKS: LinkItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Pokedex", href: "/pokedex" },
-  { label: "Pokemons", href: "/pokemon?name=pikachu" },
-  { label: "DreamTeam", href: "/dreamteam" },
+  { label: "Home", to: "/" },
+  { label: "Pokedex", to: "/pokedex" },
+  { label: "Pokemons", to: "/pokemon/pikachu" },
+  { label: "DreamTeam", to: "/dreamteam" },
 ];
 
 export const Header: React.FC = () => {
@@ -19,14 +20,14 @@ export const Header: React.FC = () => {
             <div className="LogoIconD black" />
           </div>
           <h2 className="Logotext">
-            <a href="/">Pokedex</a>
+            <NavLink to="/">Pokedex</NavLink>
           </h2>
         </div>
 
         <ul className="navlinks">
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href}>{link.label}</a>
+            <li key={link.to}>
+              <NavLink to={link.to}>{link.label}</NavLink>
             </li>
           ))}
         </ul>

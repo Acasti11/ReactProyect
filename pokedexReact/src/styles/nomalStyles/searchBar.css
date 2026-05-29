@@ -1,0 +1,47 @@
+.searchBar {
+  position: fixed;
+  top: 13.5rem;
+  width: 83.6vw;
+  z-index: 998;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.searchBar_icon {
+  position: absolute;
+  padding: 1.5em 0.75em;
+  stroke: #1c1c1e;
+  z-index: 999;
+  width: 7em;
+  height: 7em;
+  transform: translateY(-0.4em);
+}
+#busqueda {
+  padding: 1em 0.75em 1em 5.5em;
+  border: 0.12em solid #cfcfcf;
+  border-radius: 1.5em;
+  background-color: #e6e6e6;
+  color: #8e8e93;
+  width: 100%;
+  z-index: 995;
+  outline: none;
+  font-size: 2em;
+}
+
+#busqueda::placeholder {
+  color: #8e8e93;
+}
+
+@media (min-width: 1080px) {
+  .searchBar {
+    top: 8rem;
+    width: 50vw;
+  }
+  .searchBar_icon {
+    width: 5.5em;
+    height: 5.5em;
+    transform: translateY(-0.8em);
+  }
+  #busqueda {
+    font-size: 1.1em;
+  }
+}

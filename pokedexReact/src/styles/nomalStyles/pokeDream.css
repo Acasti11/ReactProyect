@@ -1,0 +1,252 @@
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.pokedex_main {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 8em 0 7em;
+}
+
+.pokeFav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+
+.dream-card {
+  position: relative;
+  width: min(62em, 92vw);
+  border-radius: 1.5em;
+  padding: 2.4em 2.2em 4em;
+  background: linear-gradient(90deg, #f5dfd0 0%, #d8d3ff 100%);
+  border: 0.32em solid #e7e7f5;
+  box-shadow: 0 0.75em 1.8em rgba(20, 28, 45, 0.18);
+  min-height: 34em;
+}
+
+.dream-title {
+  position: absolute;
+  top: -0.8em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #f3f3f3;
+  color: #111;
+  font-size: 2em;
+  font-weight: 900;
+  line-height: 1;
+  padding: 0.35em 0.9em;
+  border-radius: 0.6em;
+}
+
+.dream-stage {
+  position: relative;
+  width: 100%;
+  height: 27em;
+}
+
+.dream-pokemon {
+  position: absolute;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 10px rgba(16, 24, 40, 0.26));
+  transition: transform 0.2s ease;
+}
+
+.dream-pokemon:hover {
+  transform: translateY(-3px);
+}
+
+.dream-pokemon--1 {
+  width: 21.2em;
+  left: 50%;
+  top: 2.8em;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.dream-pokemon--2 {
+  width: 14.4em;
+  left: 23%;
+  top: 8.2em;
+  z-index: 3;
+}
+
+.dream-pokemon--3 {
+  width: 16.9em;
+  right: 23%;
+  top: 6.2em;
+  z-index: 4;
+}
+
+.dream-pokemon--4 {
+  width: 8.8em;
+  left: 37%;
+  bottom: 1.6em;
+  z-index: 5;
+}
+
+.dream-pokemon--5 {
+  width: 7.5em;
+  right: 34%;
+  bottom: 1.5em;
+  z-index: 5;
+}
+
+.dream-pokemon--6 {
+  width: 6.6em;
+  left: 48%;
+  bottom: 1.1em;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+.dream-pokemon--7 {
+  width: 6.2em;
+  left: 22%;
+  top: 3.2em;
+  z-index: 1;
+}
+
+.dream-pokemon--8 {
+  width: 6.2em;
+  right: 22%;
+  top: 3.2em;
+  z-index: 1;
+}
+
+.dream-pokemon--9 {
+  width: 5.8em;
+  left: 27%;
+  bottom: 0.9em;
+  z-index: 2;
+}
+
+.dream-pokemon--10 {
+  width: 5.8em;
+  right: 27%;
+  bottom: 0.9em;
+  z-index: 2;
+}
+
+.dream-strip {
+  position: absolute;
+  left: 50%;
+  bottom: -1.1em;
+  transform: translateX(-50%);
+  background: #faf8f8;
+  border-radius: 0.8em;
+  display: flex;
+  gap: 0.6em;
+  align-items: center;
+  padding: 0.45em 0.7em;
+  box-shadow: 0 0.5em 1.1em rgba(14, 20, 32, 0.2);
+}
+
+.dream-thumb {
+  width: 2em;
+  height: 2em;
+  object-fit: contain;
+}
+
+.dream-card--empty {
+  min-height: 20em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+}
+
+.dream-empty {
+  margin-top: 1.3rem;
+  font-size: 1.15rem;
+  text-align: center;
+  color: #1f2937;
+}
+
+@media (max-width: 900px) {
+  .pokedex_main {
+    padding: 6em 0 5em;
+  }
+
+  .dream-card {
+    min-height: 27.5em;
+    padding: 1.5em 1em 2.8em;
+  }
+
+  .dream-title {
+    font-size: 1.5em;
+  }
+
+  .dream-stage {
+    height: 22em;
+  }
+
+  .dream-pokemon--1 {
+    width: 15.4em;
+    top: 2.5em;
+  }
+
+  .dream-pokemon--2 {
+    width: 10.6em;
+    left: 9%;
+    top: 7.1em;
+  }
+
+  .dream-pokemon--3 {
+    width: 11.9em;
+    right: 8%;
+    top: 5.9em;
+  }
+
+  .dream-pokemon--4 {
+    width: 5.9em;
+    left: 32%;
+    bottom: 1.1em;
+  }
+
+  .dream-pokemon--5 {
+    width: 5.1em;
+    right: 29%;
+    bottom: 1.1em;
+  }
+
+  .dream-pokemon--6 {
+    width: 4.7em;
+    bottom: 0.8em;
+  }
+
+  .dream-pokemon--7 {
+    width: 4.3em;
+    left: 18%;
+    top: 3.6em;
+  }
+
+  .dream-pokemon--8 {
+    width: 4.3em;
+    right: 18%;
+    top: 3.6em;
+  }
+
+  .dream-pokemon--9 {
+    width: 3.9em;
+    left: 24%;
+    bottom: 0.8em;
+  }
+
+  .dream-pokemon--10 {
+    width: 3.9em;
+    right: 24%;
+    bottom: 0.8em;
+  }
+}

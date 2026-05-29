@@ -1,0 +1,121 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.generalMain {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-content: center;
+  margin-top: 1em;
+  padding: 1em;
+  flex: 5;
+  background-image: url('https://www.gifcen.com/wp-content/uploads/2022/12/pokemon-gif-14.gif');
+  background-size: cover;
+  transition: transform 0.3s ease;
+}
+.card_link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+.card_link:hover {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 3em 0.5em;
+  margin: 3em 1em 3em 1em;
+  gap: 1em;
+  align-items: center;
+  align-content: center;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 1em;
+  border: solid lightgrey;
+  box-shadow: 4px 0px 10px grey;
+  transition: transform 0.2s ease;
+  width: 75vw;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.card_img {
+  max-width: 25vw;
+  max-height: 25vh;
+}
+.card header {
+  align-self: flex-start;
+  padding: 0em 3em;
+}
+.card header h2 {
+  font-size: x-large;
+  font-weight: bold;
+  justify-self: left;
+}
+.card_Main {
+  max-width: 80%;
+}
+
+.card_Main p {
+  line-height: 1.5em;
+  text-wrap: initial;
+  font-size: medium;
+}
+
+.generalMain::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  transform: translateY(-1em);
+  transition: transform 3s ease;
+  pointer-events: none;
+  background-image: url('../../img/logo.jpg');
+  background-position: center;
+  z-index: 997;
+}
+
+.generalMain:hover::before {
+  transform: translateY(-5000px);
+}
+
+@media (min-width: 1080px) {
+  .generalMain {
+    flex-direction: row;
+  }
+  .card {
+    margin: 1em;
+    max-width: 35vw;
+  }
+  .card_img {
+    max-width: 20vw;
+    max-height: 20vh;
+  }
+  /* estilos para pantallas iguales o mayores a 768px */
+  .card:nth-child(odd) {
+    margin-left: 6em;
+    margin-right: 3em;
+  }
+  .card:nth-child(even) {
+    margin-left: 3em;
+    margin-right: 6em;
+  }
+}

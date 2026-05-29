@@ -1,0 +1,361 @@
+body {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+/* Overrides para la página pokedex (navbar fixed, footer normal) */
+.navheader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  flex: none;
+}
+
+footer {
+  flex: none;
+  justify-self: auto;
+  max-height: none;
+}
+
+.pokedex_main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 2rem;
+  margin-top: 5rem;
+  overflow-y: auto;
+  flex: 10;
+  position: relative;
+}
+
+.pokeCard_flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5em;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 70vw;
+  height: 80vh;
+  transform: translateY(7rem);
+  justify-items: center;
+}
+.pokeCard_grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 55rem;
+  gap: 2rem;
+  margin: 5rem 1rem 2rem;
+  padding: 0 2rem;
+  width: 100%;
+  transform: translateY(10rem);
+  position: absolute;
+}
+.pokeCard_grid a {
+  text-decoration: none;
+}
+.pokeCard {
+  width: 100%;
+  border-radius: 1.25rem;
+  background-color: #f0f0f0;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pokeCard_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 2.5rem;
+  color: #fff;
+}
+
+.pokeCard_name {
+  font-size: 3.5rem;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.pokeCard_number {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.pokeCard_image {
+  width: 75%;
+  max-height: 28rem;
+  object-fit: contain;
+  display: block;
+  margin: -5em auto 0;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -3.5rem;
+  transform: translateY(5em);
+}
+
+.pokeCard_info {
+  padding: 10rem 3rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: #fff;
+  border-radius: 0.75rem 0.75rem 0.5rem 0.5rem;
+  margin: 0 0.8rem 0.8rem;
+  position: relative;
+  z-index: 1;
+}
+
+.pokeCard_types {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-self: center;
+}
+
+.pokeCard_types span {
+  padding: 0.25em 0.5em;
+  font-size: 2rem;
+}
+
+.pokeCard_type {
+  font-weight: bold;
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  border-radius: 1.5rem;
+  font-size: 1.35rem;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.pokeCard_physical {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  color: #555;
+  font-size: 2.5rem;
+}
+.separationbar {
+  background-color: #878787;
+  align-self: center;
+  transform: translateY(-0.3em);
+  padding: 0.9em 0.05em;
+}
+
+.pokeCard_weight,
+.pokeCard_height {
+  font-weight: bold;
+}
+
+.pokeCard_stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.pokeCard_stat {
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.pokeCard_statLabel {
+  font-size: 1.5rem;
+  color: #999;
+  font-weight: bold;
+  text-transform: uppercase;
+  min-width: 2.8rem;
+}
+
+.pokeCard_statValue {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: bold;
+  min-width: 2.8rem;
+}
+.error_c {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.error_msg {
+  text-align: center;
+}
+.error_img {
+  align-self: center;
+  justify-self: center;
+  max-width: 50px;
+  max-height: 50px;
+}
+.pokeCard_stat progress {
+  flex: 1;
+  height: 1rem;
+  border-radius: 0.25rem;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.pokeCard_stat progress::-webkit-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 0.25rem;
+}
+
+.pokeCard_stat progress::-webkit-progress-value {
+  background-color: rgb(68, 182, 253);
+  border-radius: 0.25rem;
+}
+
+.pokeCard_stat progress::-moz-progress-bar {
+  background-color: #333;
+  border-radius: 0.25rem;
+}
+.loading {
+  border: solid white 1em;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 30em 9em;
+  overflow: hidden;
+}
+.star_li {
+  all: unset;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  border-radius: 50%;
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 14px;
+  transform: translateY(-7em);
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.star_li:active,
+.star_li:focus,
+.star_li:focus-visible {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.star_li::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.star {
+  all: unset;
+  display: inline-flex; /* o block/inline-block */
+  cursor: pointer;
+}
+.star_li:hover {
+  background: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  font-size: 14px;
+}
+
+@media (min-width: 1000px) {
+  .pokeCard_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    gap: 1.5em;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 70vw;
+    max-width: 1000px;
+    transform: translateY(7rem);
+    justify-items: center;
+  }
+  .pokeCard {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    max-width: 18rem;
+  }
+  .pokeCard_header {
+    padding: 0.5rem 0.75rem;
+  }
+  .pokeCard_name {
+    font-size: 1.2rem;
+  }
+  .pokeCard_number {
+    font-size: 1rem;
+  }
+  .pokeCard_image {
+    width: 65%;
+    max-height: 10rem;
+    margin: -2em auto 0;
+    margin-bottom: -1.5rem;
+    transform: translateY(2em);
+  }
+  .pokeCard_info {
+    padding: 3.5rem 1rem 1rem;
+    gap: 0.6rem;
+    margin: 0 0.4rem 0.4rem;
+  }
+  .pokeCard_types span {
+    padding: 0.15em 0.3em;
+    font-size: 0.85rem;
+  }
+  .pokeCard_type {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  .pokeCard_physical {
+    padding: 0.3rem 0;
+    font-size: 0.9rem;
+  }
+  .separationbar {
+    padding: 0.5em 0.03em;
+  }
+  .pokeCard_stats {
+    gap: 0.4rem;
+  }
+  .pokeCard_stat {
+    gap: 0.4rem;
+  }
+  .pokeCard_statLabel {
+    font-size: 0.65rem;
+    min-width: 1.5rem;
+  }
+  .pokeCard_statValue {
+    font-size: 0.7rem;
+    min-width: 1.5rem;
+  }
+  .pokeCard_stat progress {
+    height: 0.35rem;
+  }
+  .loading {
+    padding: 8em 9em;
+  }
+}
