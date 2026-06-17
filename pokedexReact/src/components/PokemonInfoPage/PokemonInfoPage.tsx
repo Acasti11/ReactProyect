@@ -10,8 +10,7 @@ import "../../styles/nomalStyles/pokeType.css";
 export const PokemonInfoPage = () => {
     const { name } = useParams<{ name: string }>();
 
-    const [pokemon, setPokemon] =
-        useState<Types.Pokemon | null>(null);
+    const [pokemon, setPokemon] = useState<Types.Pokemon | null>(null);
 
     useEffect(() => {
         if (!name) return;

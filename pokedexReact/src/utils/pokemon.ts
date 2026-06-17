@@ -52,11 +52,12 @@ export const hasDreamTeamPokemon = (name: string): boolean => {
 
 export const addDreamTeamPokemon = (pokemon: DreamTeamPokemon): boolean => {
   const team = getDreamTeam();
-  if (team.length >= 6 || team.some(p => p.name === pokemon.name)) {
+  if (team.length >= 10 || team.some(p => p.name === pokemon.name)) {
     return false;
   }
   team.push(pokemon);
   localStorage.setItem('dreamTeam', JSON.stringify(team));
+  window.dispatchEvent(new CustomEvent('dreamteam:updated'));
   return true;
 };
 
@@ -64,4 +65,5 @@ export const removeDreamTeamPokemon = (name: string): void => {
   const team = getDreamTeam();
   const filtered = team.filter(p => p.name !== name);
   localStorage.setItem('dreamTeam', JSON.stringify(filtered));
+  window.dispatchEvent(new CustomEvent('dreamteam:updated'));
 };

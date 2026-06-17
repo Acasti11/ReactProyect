@@ -1,13 +1,4 @@
-body {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
-.pokedex_main {
+.dream_main {
   display: flex;
   flex: 1;
   justify-content: center;

@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { PokemonCard } from "./PokemonCard";
 import type * as Types from "../../types/PokemonType";
 import { SearchBar } from "./SearchBar";
 import { FilterPanel } from "./FilterPanel";
-import { ErrorMessage } from "./ErrorMessage";
 import {getGeneration } from "../../Services/PokeApi";
-import PokeballImg from "../../img/Pokeball.png";
+import { PokemonListContainer } from "./PokemonListContainer";
 
 const SELECTED_KEY = "filter_selected_types";
 
@@ -15,7 +13,7 @@ type LoadingState = "idle" | "loading" | "error" | "success";
 
 export function PokemonLista(){
     const [pokemon, setPokemon] = useState(POKEMON_LIST);
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState<string>("");
   const [loadingState, setLoadingState] = useState<LoadingState>("loading");
   const [selectedTypes, setSelectedTypes] = useState<string[]>(() => {
     try {
@@ -83,69 +81,6 @@ export function PokemonLista(){
     const hasNoResultsBySearch = hasNoResults && normalizedSearch.length > 0 && selectedTypes.length === 0;
     const hasNoResultsByType = hasNoResults && selectedTypes.length > 0 && normalizedSearch.length === 0;
 
-    const renderLoadingCards = (): React.ReactNode => {
-      return Array.from({ length: 30 }, (_, index) => (
-        <article key={`loading-${index}`} className="pokeCard loading">
-          <div>
-            <img src={PokeballImg} alt="Loading" />
-          </div>
-        </article>
-      ));
-    };
-
-    const renderContainer = (): React.ReactNode => {
-      if (loadingState === "loading") {
-        return renderLoadingCards();
-      }
-
-      if (loadingState === "error") {
-        return (
-          <ErrorMessage
-            title="Error"
-            message="An error occurred while loading Pokémon"
-            secondaryMessage="Please try again later"
-            imageSrc="alert"
-          />
-        );
-      }
-
-      if (hasNoResultsByCombined) {
-        const typesList = selectedTypes.join(", ");
-        return (
-          <ErrorMessage
-            title="Not Found"
-            message={`No Pokémon found matching "${searchValue}" with type${selectedTypes.length > 1 ? "s" : ""}: ${typesList}`}
-            imageSrc="pokenot"
-          />
-        );
-      }
-
-      if (hasNoResultsBySearch) {
-        return (
-          <ErrorMessage
-            title="Not Found"
-            message={`There are no results for "${searchValue}"`}
-            imageSrc="pokenot"
-          />
-        );
-      }
-
-      if (hasNoResultsByType) {
-        const typesList = selectedTypes.join(", ");
-        return (
-          <ErrorMessage
-            title="Not Found"
-            message={`No Pokémon found with the selected type${selectedTypes.length > 1 ? "s" : ""}: ${typesList}`}
-            imageSrc="pokenot"
-          />
-        );
-      }
-
-      return filteredPokemon.map((currentPokemon) => {
-        return <PokemonCard key={currentPokemon.id} pokemon={currentPokemon}></PokemonCard>;
-      });
-    };
-
     const containerClass = loadingState === "loading"
       ? "pokeCard_grid"
       : (hasNoResults || loadingState === "error")
@@ -161,7 +96,15 @@ export function PokemonLista(){
         <SearchBar value={searchValue} onChange={setSearchValue} />
 
         <section className={containerClass} id="pokemon_container">
-          {renderContainer()}
+          <PokemonListContainer
+            loadingState={loadingState}
+            hasNoResultsByCombined={hasNoResultsByCombined}
+            hasNoResultsBySearch={hasNoResultsBySearch}
+            hasNoResultsByType={hasNoResultsByType}
+            selectedTypes={selectedTypes}
+            searchValue={searchValue}
+            filteredPokemon={filteredPokemon}
+          />
         </section>
 
         <FilterPanel

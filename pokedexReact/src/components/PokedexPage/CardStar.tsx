@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import type * as Types from "../../types/PokemonType";
 import {
   hasDreamTeamPokemon,
@@ -16,6 +16,20 @@ export const CardStar: React.FC<Props> = ({ pokemon }) => {
   const [isStarred, setIsStarred] = useState(
     hasDreamTeamPokemon(pokemon.name)
   );
+
+  useEffect(() => {
+    const syncStarState = (): void => {
+      setIsStarred(hasDreamTeamPokemon(pokemon.name));
+    };
+
+    window.addEventListener("dreamteam:updated", syncStarState as EventListener);
+    window.addEventListener("storage", syncStarState);
+
+    return () => {
+      window.removeEventListener("dreamteam:updated", syncStarState as EventListener);
+      window.removeEventListener("storage", syncStarState);
+    };
+  }, [pokemon.name]);
 
   const handleStarClick = (e: React.MouseEvent) => {
     e.preventDefault();

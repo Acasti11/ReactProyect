@@ -35,11 +35,13 @@ export const EvolutionSection: React.FC<Props> = ({pokemon,}) => {
         const getMegaForms = async (basePokemon: Types.Pokemon): Promise<string[]> => {
             try {
                 const speciesRes = await fetch(basePokemon.species.url);
-                const species = await speciesRes.json();
+                const species: {
+                    varieties?: Array<{ pokemon: { name: string; url?: string } }>;
+                } = await speciesRes.json();
 
                 const megas: string[] = (species.varieties || [])
-                    .map((v: any) => v.pokemon.name)
-                    .filter((name: string) => name.includes("mega"));
+                    .map((v) => v.pokemon.name)
+                    .filter((name) => name.includes("mega"));
 
                 return megas;
             } catch (err) {

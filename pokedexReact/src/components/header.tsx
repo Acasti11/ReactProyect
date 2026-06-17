@@ -8,7 +8,7 @@ const NAV_LINKS: LinkItem[] = [
   { label: "Home", to: "/" },
   { label: "Pokedex", to: "/pokedex" },
   { label: "Pokemons", to: "/pokemon/pikachu" },
-  { label: "DreamTeam", to: "/dreamteam" },
+  { label: "Dream Team", to: "/dreamteam" },
 ];
 
 export const Header: React.FC = () => {
