@@ -1,5 +1,5 @@
-import React from "react";
-import "../styles/nomalStyles/navbar.css"
+import React from 'react';
+import '../../../../../styles/nomalStyles/navbar.css';
 
 export const Footer: React.FC = () => {
   return (

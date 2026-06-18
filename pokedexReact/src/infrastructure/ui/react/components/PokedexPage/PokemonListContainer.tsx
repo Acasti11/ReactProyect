@@ -1,5 +1,5 @@
-import { ErrorMessage } from '../../../../../components/PokedexPage/ErrorMessage';
-import { LoadingCards } from '../../../../../components/PokedexPage/LoadingCards';
+import { ErrorMessage } from './ErrorMessage';
+import { LoadingCards } from './LoadingCards';
 import { PokemonCard } from './PokemonCard';
 import type { PokemonListItemDto } from '../../../../../application/dto/PokemonDto';
 import type { ReactNode } from 'react';

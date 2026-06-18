@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import type { ReactElement } from 'react';
 import { usePokemonList } from '../hooks/usePokemonList';
-import { SearchBar } from '../../../../components/PokedexPage/SearchBar';
-import { FilterPanel } from '../../../../components/PokedexPage/FilterPanel';
+import { SearchBar } from '../components/PokedexPage/SearchBar';
+import { FilterPanel } from '../components/PokedexPage/FilterPanel';
 import { PokemonListContainer } from '../components/PokedexPage/PokemonListContainer';
 import '../../../../styles/nomalStyles/pokeCard.css';
 import '../../../../styles/nomalStyles/pokeType.css';

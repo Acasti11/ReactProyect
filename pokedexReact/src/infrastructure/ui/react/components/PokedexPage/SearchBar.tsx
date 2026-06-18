@@ -1,5 +1,5 @@
-import React from "react";
-import "../../styles/nomalStyles/searchBar.css";
+import React from 'react';
+import '../../../../../styles/nomalStyles/searchBar.css';
 
 type SearchBarProps = {
   value: string;

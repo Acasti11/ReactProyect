@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { toTypeClass } from "../../utils/pokemon";
-import "../../styles/nomalStyles/filterPanel.css";
-import "../../styles/nomalStyles/pokeType.css";
+import React, { useState } from 'react';
+import { toTypeClass } from '../../../../../utils/pokemon';
+import '../../../../../styles/nomalStyles/filterPanel.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
-const STORAGE_KEY = "filter_collapsed";
+const STORAGE_KEY = 'filter_collapsed';
 
 type FilterPanelProps = {
   types: string[];
@@ -21,7 +21,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
   const [collapsed, setCollapsed] = useState(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY);
-      return stored !== null ? stored === "true" : true;
+      return stored !== null ? stored === 'true' : true;
     } catch {
       return true;
     }
@@ -35,11 +35,11 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
     });
   };
 
-  const toggleText = collapsed ? "☰" : "✕";
-  const toggleTitle = collapsed ? "Abrir panel de filtros" : "Cerrar panel de filtros";
+  const toggleText = collapsed ? '☰' : '✕';
+  const toggleTitle = collapsed ? 'Abrir panel de filtros' : 'Cerrar panel de filtros';
 
   return (
-    <section id="filter_container" className={collapsed ? "collapsed" : ""}>
+    <section id="filter_container" className={collapsed ? 'collapsed' : ''}>
       <button id="filter_button" type="button" title={toggleTitle} onClick={handleTogglePanel}>
         {toggleText}
       </button>
@@ -56,7 +56,7 @@ export const FilterPanel: React.FC<FilterPanelProps> = ({
           <button
             key={normalizedType}
             type="button"
-            className={`type-button ${toTypeClass(normalizedType)} ${isSelected ? "active" : ""}`}
+            className={`type-button ${toTypeClass(normalizedType)} ${isSelected ? 'active' : ''}`}
             onClick={() => onToggleType(normalizedType)}
           >
             {toTypeClass(normalizedType)}

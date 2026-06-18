@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Layout } from '../../../components/Layout';
-import { HomePage } from '../../../components/HomePage';
+import { Layout } from '../react/components/shared/Layout';
+import { HomePage } from '../react/pages/HomePage';
 import { PokemonLista } from '../react/pages/PokemonListPage';
 import { PokemonInfoPage } from '../react/pages/PokemonInfoPage';
 import { DreamTeamPage } from '../react/pages/DreamTeamPage';

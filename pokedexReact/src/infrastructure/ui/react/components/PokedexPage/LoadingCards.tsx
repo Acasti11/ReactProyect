@@ -1,4 +1,4 @@
-import PokeballImg from "../../img/Pokeball.png";
+import PokeballImg from '../../../../../img/Pokeball.png';
 
 interface LoadingCardsProps {
   count?: number;

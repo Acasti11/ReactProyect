@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PokedexImg from "../img/Pokedex.jpg";
-import PokemonImg from "../img/pokaball.jpg";
-import "../styles/nomalStyles/homepage.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PokedexImg from '../../../../img/Pokedex.jpg';
+import PokemonImg from '../../../../img/pokaball.jpg';
+import '../../../../styles/nomalStyles/homepage.css';
 
 export const HomePage: React.FC = () => {
   return (
@@ -53,7 +53,7 @@ export const HomePage: React.FC = () => {
             </p>
           </main>
         </section>
-      </Link>s
+      </Link>
     </main>
   );
 };

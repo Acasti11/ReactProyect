@@ -1,14 +1,14 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "../styles/nomalStyles/navbar.css"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import '../../../../../styles/nomalStyles/navbar.css';
 
 type LinkItem = { label: string; to: string };
 
 const NAV_LINKS: LinkItem[] = [
-  { label: "Home", to: "/" },
-  { label: "Pokedex", to: "/pokedex" },
-  { label: "Pokemons", to: "/pokemon/pikachu" },
-  { label: "Dream Team", to: "/dreamteam" },
+  { label: 'Home', to: '/' },
+  { label: 'Pokedex', to: '/pokedex' },
+  { label: 'Pokemons', to: '/pokemon/pikachu' },
+  { label: 'Dream Team', to: '/dreamteam' },
 ];
 
 export const Header: React.FC = () => {

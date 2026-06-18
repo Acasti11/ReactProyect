@@ -1,12 +1,12 @@
-import React from "react";
-import AlertImg from "../../img/Alert.png";
-import PokeNotImg from "../../img/PokeNot.png";
-import "../../styles/nomalStyles/pokeCard.css";
+import React from 'react';
+import AlertImg from '../../../../../img/Alert.png';
+import PokeNotImg from '../../../../../img/PokeNot.png';
+import '../../../../../styles/nomalStyles/pokeCard.css';
 
 type ErrorMessageProps = {
   title: string;
   message: string;
-  imageSrc?: "alert" | "pokenot";
+  imageSrc?: 'alert' | 'pokenot';
   secondaryMessage?: string;
 };
 
