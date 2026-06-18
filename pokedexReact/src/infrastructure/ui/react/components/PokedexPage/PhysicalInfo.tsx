@@ -1,13 +1,12 @@
-import React from 'react';
-import { PokemonListItemDto } from '../../../application/dto/PokemonDto';
-import '../../../../styles/nomalStyles/pokeCard.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import type { PokemonListItemDto } from '../../../../../application/dto/PokemonDto';
+import '../../../../../styles/nomalStyles/pokeCard.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 type Props = {
   pokemon: PokemonListItemDto;
 };
 
-export const PhysicalInfo: React.FC<Props> = ({ pokemon }) => {
+export const PhysicalInfo = ({ pokemon }: Props) => {
   const weightKg = pokemon.weight / 10;
   const heightM = pokemon.height / 10;
 

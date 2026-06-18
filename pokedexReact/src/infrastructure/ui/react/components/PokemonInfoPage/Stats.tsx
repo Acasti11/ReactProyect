@@ -1,14 +1,13 @@
-import React from 'react';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
 import { StatsChartCanvas } from './StartChartCanvas';
-import '../../../../styles/nomalStyles/pokeinfo.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 type Props = {
   pokemon: PokemonDetailDto;
 };
 
-export const Stats: React.FC<Props> = ({ pokemon }) => {
+export const Stats = ({ pokemon }: Props) => {
   return (
     <section className="poke_stats">
       <h2 className="section_title">Stats</h2>

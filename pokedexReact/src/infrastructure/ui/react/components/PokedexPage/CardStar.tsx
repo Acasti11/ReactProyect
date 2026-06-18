@@ -1,20 +1,19 @@
-import React from 'react';
-import { PokemonListItemDto } from '../../../application/dto/PokemonDto';
+import type { PokemonListItemDto } from '../../../../../application/dto/PokemonDto';
 import { useDreamTeamMember } from '../../hooks/useDreamTeamMember';
-import '../../../../styles/nomalStyles/pokeCard.css';
+import '../../../../../styles/nomalStyles/pokeCard.css';
 
 type Props = {
   pokemon: PokemonListItemDto;
 };
 
-export const CardStar: React.FC<Props> = ({ pokemon }) => {
+export const CardStar = ({ pokemon }: Props) => {
   const { isStarred, add, remove } = useDreamTeamMember(
     pokemon.id,
     pokemon.name,
     pokemon.spriteUrl
   );
 
-  const handleStarClick = (e: React.MouseEvent) => {
+  const handleStarClick = (e: { preventDefault(): void; stopPropagation(): void }) => {
     e.preventDefault();
     e.stopPropagation();
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import { DreamTeamPokemonDto } from '../../../application/dto/DreamTeamDto';
+import type { DreamTeamPokemonDto } from '../../../../../application/dto/DreamTeamDto';
 import { DreamPokemonImage } from './DreamPokemonImage';
 import { DreamThumbnail } from './DreamThumbnail';
 
@@ -7,7 +6,7 @@ type Props = {
   team: ReadonlyArray<DreamTeamPokemonDto>;
 };
 
-export const DreamTeamCard: React.FC<Props> = ({ team }) => {
+export const DreamTeamCard = ({ team }: Props) => {
   return (
     <section className="dream-card">
       <h2 className="dream-title">Dream Team</h2>

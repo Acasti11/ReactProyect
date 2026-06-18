@@ -1,8 +1,9 @@
-import React, { createContext, useContext, ReactNode } from 'react';
-import { GetPokemonByNameUseCase } from '../../../application/use-cases/GetPokemon';
-import { GetPokemonByGenerationUseCase } from '../../../application/use-cases/GetPokemonByGeneration';
-import { GetPokemonEvolutionsUseCase, GetPokemonMegaFormsUseCase } from '../../../application/use-cases/GetPokemonEvolutions';
-import {
+import React, { createContext, useContext } from 'react';
+import type { ReactNode } from 'react';
+import type { GetPokemonByNameUseCase } from '../../../application/use-cases/GetPokemon';
+import type { GetPokemonByGenerationUseCase } from '../../../application/use-cases/GetPokemonByGeneration';
+import type { GetPokemonEvolutionsUseCase, GetPokemonMegaFormsUseCase } from '../../../application/use-cases/GetPokemonEvolutions';
+import type {
   GetDreamTeamUseCase,
   AddToDreamTeamUseCase,
   RemoveFromDreamTeamUseCase,

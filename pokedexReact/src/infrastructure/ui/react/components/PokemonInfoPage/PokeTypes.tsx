@@ -1,14 +1,13 @@
-import React from 'react';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
-import { typeIcons, toTypeClass } from '../../../../utils/pokemon';
-import '../../../../styles/nomalStyles/pokeType.css';
-import '../../../../styles/nomalStyles/pokeinfo.css';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
+import { typeIcons, toTypeClass } from '../../../../../utils/pokemon';
+import '../../../../../styles/nomalStyles/pokeType.css';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
 
 type Props = {
   pokemon: PokemonDetailDto;
 };
 
-export const PokemonInfoTypes: React.FC<Props> = ({ pokemon }) => {
+export const PokemonInfoTypes = ({ pokemon }: Props) => {
   return (
     <div className="poke_types">
       {pokemon.types.map((t, idx) => (

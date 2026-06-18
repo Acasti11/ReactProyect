@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useUseCases } from '../state/UseCasesContext';
-import { DreamTeamPokemonDto } from '../../../application/dto/DreamTeamDto';
+import { useUseCases } from '../../state/UseCasesContext';
+import type { DreamTeamPokemonDto } from '../../../../application/dto/DreamTeamDto';
 
 export function useDreamTeam(): ReadonlyArray<DreamTeamPokemonDto> {
   const { getDreamTeam } = useUseCases();

@@ -1,11 +1,16 @@
-import { DreamTeamRepository } from '../../domain/repositories/DreamTeamRepository';
+import type { DreamTeamRepository } from '../../domain/repositories/DreamTeamRepository';
 import { DreamTeamPokemon } from '../../domain/entities/DreamTeamPokemon';
 import { PokemonId } from '../../domain/value-objects/PokemonId';
 import { PokemonName } from '../../domain/value-objects/PokemonName';
-import { DreamTeamPokemonDto, toDreamTeamPokemonDto } from '../dto/DreamTeamDto';
+import { toDreamTeamPokemonDto } from '../dto/DreamTeamDto';
+import type { DreamTeamPokemonDto } from '../dto/DreamTeamDto';
 
 export class GetDreamTeamUseCase {
-  constructor(private readonly dreamTeamRepository: DreamTeamRepository) {}
+  private readonly dreamTeamRepository: DreamTeamRepository;
+
+  constructor(dreamTeamRepository: DreamTeamRepository) {
+    this.dreamTeamRepository = dreamTeamRepository;
+  }
 
   execute(): ReadonlyArray<DreamTeamPokemonDto> {
     const team = this.dreamTeamRepository.getAll();
@@ -14,7 +19,11 @@ export class GetDreamTeamUseCase {
 }
 
 export class AddToDreamTeamUseCase {
-  constructor(private readonly dreamTeamRepository: DreamTeamRepository) {}
+  private readonly dreamTeamRepository: DreamTeamRepository;
+
+  constructor(dreamTeamRepository: DreamTeamRepository) {
+    this.dreamTeamRepository = dreamTeamRepository;
+  }
 
   execute(props: { id: number; name: string; spriteUrl: string }): boolean {
     const pokemon = new DreamTeamPokemon({
@@ -27,7 +36,11 @@ export class AddToDreamTeamUseCase {
 }
 
 export class RemoveFromDreamTeamUseCase {
-  constructor(private readonly dreamTeamRepository: DreamTeamRepository) {}
+  private readonly dreamTeamRepository: DreamTeamRepository;
+
+  constructor(dreamTeamRepository: DreamTeamRepository) {
+    this.dreamTeamRepository = dreamTeamRepository;
+  }
 
   execute(name: string): void {
     const pokemonName = new PokemonName(name);
@@ -36,7 +49,11 @@ export class RemoveFromDreamTeamUseCase {
 }
 
 export class IsInDreamTeamUseCase {
-  constructor(private readonly dreamTeamRepository: DreamTeamRepository) {}
+  private readonly dreamTeamRepository: DreamTeamRepository;
+
+  constructor(dreamTeamRepository: DreamTeamRepository) {
+    this.dreamTeamRepository = dreamTeamRepository;
+  }
 
   execute(name: string): boolean {
     const pokemonName = new PokemonName(name);

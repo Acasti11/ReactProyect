@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useUseCases } from '../state/UseCasesContext';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
+import { useUseCases } from '../../state/UseCasesContext';
+import type { PokemonDetailDto } from '../../../../application/dto/PokemonDto';
 import { dtoToPokemonEntity } from './dtoToEntity';
 
 type LoadingState = 'idle' | 'loading' | 'error' | 'success';
@@ -27,11 +27,11 @@ export function usePokemonEvolutions(pokemon: PokemonDetailDto | null): UsePokem
 
     getPokemonEvolutions
       .execute(entity)
-      .then((data) => {
+      .then((data: ReadonlyArray<PokemonDetailDto>) => {
         setEvolutions(data);
         setLoadingState('success');
       })
-      .catch((err) => {
+      .catch((err: unknown) => {
         setError(err instanceof Error ? err : new Error(String(err)));
         setLoadingState('error');
       });

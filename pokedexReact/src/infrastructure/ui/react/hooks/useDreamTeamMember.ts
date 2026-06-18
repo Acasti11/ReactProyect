@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from 'react';
-import { useUseCases } from '../state/UseCasesContext';
+import { useUseCases } from '../../state/UseCasesContext';
 
 export function useDreamTeamMember(
   id: number,

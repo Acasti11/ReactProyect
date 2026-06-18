@@ -1,7 +1,6 @@
-import React from 'react';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
-import '../../../../styles/nomalStyles/pokeinfo.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 type Props = {
   pokemon: PokemonDetailDto;
@@ -16,7 +15,7 @@ function formatLabel(value: string): string {
     .join(' ');
 }
 
-export const MovesSection: React.FC<Props> = ({ pokemon, title, type }) => {
+export const MovesSection = ({ pokemon, title, type }: Props) => {
   const methodMap: Record<'tm' | 'egg' | 'tutor', string> = {
     tm: 'machine',
     egg: 'egg',

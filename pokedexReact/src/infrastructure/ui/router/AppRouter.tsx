@@ -1,12 +1,12 @@
-import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { Layout } from '../../../../components/Layout';
-import { HomePage } from '../../../../components/HomePage';
-import { PokemonLista } from './PokemonListPage';
-import { PokemonInfoPage } from './PokemonInfoPage';
-import { DreamTeamPage } from './DreamTeamPage';
+import { Layout } from '../../../components/Layout';
+import { HomePage } from '../../../components/HomePage';
+import { PokemonLista } from '../react/pages/PokemonListPage';
+import { PokemonInfoPage } from '../react/pages/PokemonInfoPage';
+import { DreamTeamPage } from '../react/pages/DreamTeamPage';
+import type { ReactElement } from 'react';
 
-export function AppRouter(): React.ReactElement {
+export function AppRouter(): ReactElement {
   return (
     <Routes>
       <Route element={<Layout />}>

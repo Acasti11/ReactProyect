@@ -1,7 +1,6 @@
-import React from 'react';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
-import '../../../../styles/nomalStyles/pokeinfo.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 interface NormalizedMove {
   moveName: string;
@@ -21,7 +20,7 @@ function formatLabel(value: string): string {
     .join(' ');
 }
 
-export const MovesTable: React.FC<Props> = ({ pokemon }) => {
+export const MovesTable = ({ pokemon }: Props) => {
   const normalizedMoves: NormalizedMove[] = pokemon.moves
     .map((moveEntry) => {
       const details = moveEntry.versionGroupDetails || [];

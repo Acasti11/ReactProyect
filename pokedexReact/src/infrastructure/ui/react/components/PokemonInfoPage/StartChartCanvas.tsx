@@ -1,14 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Chart from 'chart.js/auto';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
-import '../../../../styles/nomalStyles/pokeinfo.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 type Props = {
   pokemon: PokemonDetailDto;
 };
 
-export const StatsChartCanvas: React.FC<Props> = ({ pokemon }) => {
+export const StatsChartCanvas = ({ pokemon }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {

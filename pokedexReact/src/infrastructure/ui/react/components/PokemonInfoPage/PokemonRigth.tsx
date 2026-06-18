@@ -1,9 +1,8 @@
-import React from 'react';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
 import { Stats } from './Stats';
 import { MovesTable } from './MovesTable';
-import '../../../../styles/nomalStyles/pokeinfo.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 interface Props {
   pokemon: PokemonDetailDto;

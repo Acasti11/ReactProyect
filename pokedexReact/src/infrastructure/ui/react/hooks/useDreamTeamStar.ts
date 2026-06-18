@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { useUseCases } from '../state/UseCasesContext';
+import { useUseCases } from '../../state/UseCasesContext';
 
 export function useDreamTeamStar(name: string): {
   isStarred: boolean;
   toggle: () => void;
 } {
-  const { isInDreamTeam, addToDreamTeam, removeFromDreamTeam } = useUseCases();
+  const { isInDreamTeam, removeFromDreamTeam } = useUseCases();
   const [isStarred, setIsStarred] = useState(() => isInDreamTeam.execute(name));
 
   useEffect(() => {

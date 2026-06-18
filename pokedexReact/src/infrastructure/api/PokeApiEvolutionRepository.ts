@@ -1,7 +1,7 @@
 import { Pokemon } from '../../domain/entities/Pokemon';
 import { PokemonName } from '../../domain/value-objects/PokemonName';
-import { EvolutionRepository } from '../../domain/repositories/EvolutionRepository';
-import { PokemonRepository } from '../../domain/repositories/PokemonRepository';
+import type { EvolutionRepository } from '../../domain/repositories/EvolutionRepository';
+import type { PokemonRepository } from '../../domain/repositories/PokemonRepository';
 
 interface EvolutionChainApi {
   species: { name: string };
@@ -14,7 +14,11 @@ interface SpeciesApi {
 }
 
 export class PokeApiEvolutionRepository implements EvolutionRepository {
-  constructor(private readonly pokemonRepository: PokemonRepository) {}
+  private readonly pokemonRepository: PokemonRepository;
+
+  constructor(pokemonRepository: PokemonRepository) {
+    this.pokemonRepository = pokemonRepository;
+  }
 
   async getEvolutionChain(pokemon: Pokemon): Promise<ReadonlyArray<Pokemon>> {
     const speciesRes = await fetch(pokemon.speciesUrl);

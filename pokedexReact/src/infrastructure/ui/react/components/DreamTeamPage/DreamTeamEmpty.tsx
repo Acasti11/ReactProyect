@@ -1,6 +1,4 @@
-import React from 'react';
-
-export const DreamTeamEmpty: React.FC = () => {
+export const DreamTeamEmpty = () => {
   return (
     <section className="dream-card dream-card--empty">
       <h2 className="dream-title">Dream Team</h2>

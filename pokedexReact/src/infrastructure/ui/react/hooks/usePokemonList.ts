@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useUseCases } from '../state/UseCasesContext';
-import { PokemonListItemDto } from '../../../application/dto/PokemonDto';
+import { useUseCases } from '../../state/UseCasesContext';
+import type { PokemonListItemDto } from '../../../../application/dto/PokemonDto';
 
 type LoadingState = 'idle' | 'loading' | 'error' | 'success';
 
@@ -22,11 +22,11 @@ export function usePokemonList(generation: number): UsePokemonListResult {
 
     getPokemonByGeneration
       .execute(generation)
-      .then((data) => {
+      .then((data: ReadonlyArray<PokemonListItemDto>) => {
         setPokemonList(data);
         setLoadingState('success');
       })
-      .catch((err) => {
+      .catch((err: unknown) => {
         setError(err instanceof Error ? err : new Error(String(err)));
         setLoadingState('error');
       });

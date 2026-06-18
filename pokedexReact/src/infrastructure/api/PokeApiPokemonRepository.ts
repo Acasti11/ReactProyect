@@ -3,7 +3,7 @@ import { PokemonId } from '../../domain/value-objects/PokemonId';
 import { PokemonName } from '../../domain/value-objects/PokemonName';
 import { PokemonTypeName } from '../../domain/value-objects/PokemonTypeName';
 import { PokemonStatName } from '../../domain/value-objects/PokemonStatName';
-import { PokemonRepository } from '../../domain/repositories/PokemonRepository';
+import type { PokemonRepository } from '../../domain/repositories/PokemonRepository';
 import { PokemonNotFoundError, GenerationNotFoundError } from '../../domain/errors/PokemonErrors';
 
 // Tipos raw de la API PokeAPI (internos al adaptador)

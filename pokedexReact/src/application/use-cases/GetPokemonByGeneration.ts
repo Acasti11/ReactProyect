@@ -1,8 +1,13 @@
-import { PokemonRepository } from '../../domain/repositories/PokemonRepository';
-import { PokemonListItemDto, toPokemonListItemDto } from '../dto/PokemonDto';
+import type { PokemonRepository } from '../../domain/repositories/PokemonRepository';
+import { toPokemonListItemDto } from '../dto/PokemonDto';
+import type { PokemonListItemDto } from '../dto/PokemonDto';
 
 export class GetPokemonByGenerationUseCase {
-  constructor(private readonly pokemonRepository: PokemonRepository) {}
+  private readonly pokemonRepository: PokemonRepository;
+
+  constructor(pokemonRepository: PokemonRepository) {
+    this.pokemonRepository = pokemonRepository;
+  }
 
   async execute(generation: number): Promise<ReadonlyArray<PokemonListItemDto>> {
     const pokemonList = await this.pokemonRepository.getByGeneration(generation);

@@ -1,11 +1,10 @@
-import React from 'react';
-import { DreamTeamPokemonDto } from '../../../application/dto/DreamTeamDto';
+import type { DreamTeamPokemonDto } from '../../../../../application/dto/DreamTeamDto';
 
 type Props = {
   pokemon: DreamTeamPokemonDto;
 };
 
-export const DreamThumbnail: React.FC<Props> = ({ pokemon }) => {
+export const DreamThumbnail = ({ pokemon }: Props) => {
   return (
     <img
       className="dream-thumb"

@@ -1,7 +1,8 @@
-import { ErrorMessage } from '../../../../components/PokedexPage/ErrorMessage';
-import { LoadingCards } from '../../../../components/PokedexPage/LoadingCards';
+import { ErrorMessage } from '../../../../../components/PokedexPage/ErrorMessage';
+import { LoadingCards } from '../../../../../components/PokedexPage/LoadingCards';
 import { PokemonCard } from './PokemonCard';
-import { PokemonListItemDto } from '../../../application/dto/PokemonDto';
+import type { PokemonListItemDto } from '../../../../../application/dto/PokemonDto';
+import type { ReactNode } from 'react';
 
 type LoadingState = 'idle' | 'loading' | 'error' | 'success';
 
@@ -23,7 +24,7 @@ export function PokemonListContainer({
   selectedTypes,
   searchValue,
   filteredPokemon,
-}: PokemonListContainerProps): React.ReactNode {
+}: PokemonListContainerProps): ReactNode {
   if (loadingState === 'loading') {
     return <LoadingCards />;
   }

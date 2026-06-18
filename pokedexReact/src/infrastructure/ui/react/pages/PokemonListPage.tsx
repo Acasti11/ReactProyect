@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import type { ReactElement } from 'react';
 import { usePokemonList } from '../hooks/usePokemonList';
 import { SearchBar } from '../../../../components/PokedexPage/SearchBar';
 import { FilterPanel } from '../../../../components/PokedexPage/FilterPanel';
-import { PokemonListContainer } from '../../../../components/PokedexPage/PokemonListContainer';
+import { PokemonListContainer } from '../components/PokedexPage/PokemonListContainer';
 import '../../../../styles/nomalStyles/pokeCard.css';
 import '../../../../styles/nomalStyles/pokeType.css';
 
@@ -10,7 +11,7 @@ const SELECTED_KEY = 'filter_selected_types';
 
 type LoadingState = 'idle' | 'loading' | 'error' | 'success';
 
-export function PokemonLista(): React.ReactElement {
+export function PokemonLista(): ReactElement {
   const { pokemonList, loadingState, error } = usePokemonList(1);
   const [searchValue, setSearchValue] = useState<string>('');
   const [selectedTypes, setSelectedTypes] = useState<string[]>(() => {

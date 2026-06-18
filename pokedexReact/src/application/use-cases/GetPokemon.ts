@@ -1,10 +1,15 @@
-import { PokemonRepository } from '../../domain/repositories/PokemonRepository';
+import type { PokemonRepository } from '../../domain/repositories/PokemonRepository';
 import { PokemonId } from '../../domain/value-objects/PokemonId';
 import { PokemonName } from '../../domain/value-objects/PokemonName';
-import { PokemonDetailDto, toPokemonDetailDto } from '../dto/PokemonDto';
+import { toPokemonDetailDto } from '../dto/PokemonDto';
+import type { PokemonDetailDto } from '../dto/PokemonDto';
 
 export class GetPokemonByIdUseCase {
-  constructor(private readonly pokemonRepository: PokemonRepository) {}
+  private readonly pokemonRepository: PokemonRepository;
+
+  constructor(pokemonRepository: PokemonRepository) {
+    this.pokemonRepository = pokemonRepository;
+  }
 
   async execute(id: number): Promise<PokemonDetailDto> {
     const pokemonId = new PokemonId(id);
@@ -14,7 +19,11 @@ export class GetPokemonByIdUseCase {
 }
 
 export class GetPokemonByNameUseCase {
-  constructor(private readonly pokemonRepository: PokemonRepository) {}
+  private readonly pokemonRepository: PokemonRepository;
+
+  constructor(pokemonRepository: PokemonRepository) {
+    this.pokemonRepository = pokemonRepository;
+  }
 
   async execute(name: string): Promise<PokemonDetailDto> {
     const pokemonName = new PokemonName(name);

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { useUseCases } from '../state/UseCasesContext';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
+import { useUseCases } from '../../state/UseCasesContext';
+import type { PokemonDetailDto } from '../../../../application/dto/PokemonDto';
 
 type LoadingState = 'idle' | 'loading' | 'error' | 'success';
 
@@ -24,11 +24,11 @@ export function usePokemon(name: string | undefined): UsePokemonResult {
 
     getPokemonByName
       .execute(name)
-      .then((data) => {
+      .then((data: PokemonDetailDto) => {
         setPokemon(data);
         setLoadingState('success');
       })
-      .catch((err) => {
+      .catch((err: unknown) => {
         setError(err instanceof Error ? err : new Error(String(err)));
         setLoadingState('error');
       });

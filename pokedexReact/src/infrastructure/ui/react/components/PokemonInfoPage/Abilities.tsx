@@ -1,13 +1,12 @@
-import React from 'react';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
-import '../../../../styles/nomalStyles/pokeinfo.css';
-import '../../../../styles/nomalStyles/pokeType.css';
+import type { PokemonDetailDto } from '../../../../../application/dto/PokemonDto';
+import '../../../../../styles/nomalStyles/pokeinfo.css';
+import '../../../../../styles/nomalStyles/pokeType.css';
 
 type Props = {
   pokemon: PokemonDetailDto;
 };
 
-export const Abilities: React.FC<Props> = ({ pokemon }) => {
+export const Abilities = ({ pokemon }: Props) => {
   return (
     <section className="poke_abilities">
       <h2 className="section_title">Abilities</h2>

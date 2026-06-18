@@ -1,13 +1,12 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 import { usePokemon } from '../hooks/usePokemon';
 import { usePokemonEvolutions } from '../hooks/usePokemonEvolutions';
-import { PokemonHeader } from './PokemonInfoPage/PokemonHeader';
-import { PokemonContent } from './PokemonInfoPage/PokemonContent';
+import { PokemonHeader } from '../components/PokemonInfoPage/PokemonHeader';
+import { PokemonContent } from '../components/PokemonInfoPage/PokemonContent';
 import '../../../../styles/nomalStyles/pokeinfo.css';
 import '../../../../styles/nomalStyles/pokeType.css';
 
-export const PokemonInfoPage: React.FC = () => {
+export const PokemonInfoPage = () => {
   const { name } = useParams<{ name: string }>();
   const { pokemon, loadingState } = usePokemon(name);
   const { evolutions } = usePokemonEvolutions(pokemon);

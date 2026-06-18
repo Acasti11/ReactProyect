@@ -1,9 +1,9 @@
-import { Pokemon } from '../../../domain/entities/Pokemon';
-import { PokemonId } from '../../../domain/value-objects/PokemonId';
-import { PokemonName } from '../../../domain/value-objects/PokemonName';
-import { PokemonTypeName } from '../../../domain/value-objects/PokemonTypeName';
-import { PokemonStatName } from '../../../domain/value-objects/PokemonStatName';
-import { PokemonDetailDto } from '../../../application/dto/PokemonDto';
+import { Pokemon } from '../../../../domain/entities/Pokemon';
+import { PokemonId } from '../../../../domain/value-objects/PokemonId';
+import { PokemonName } from '../../../../domain/value-objects/PokemonName';
+import { PokemonTypeName } from '../../../../domain/value-objects/PokemonTypeName';
+import { PokemonStatName } from '../../../../domain/value-objects/PokemonStatName';
+import type { PokemonDetailDto } from '../../../../application/dto/PokemonDto';
 
 export function dtoToPokemonEntity(dto: PokemonDetailDto): Pokemon {
   return new Pokemon({

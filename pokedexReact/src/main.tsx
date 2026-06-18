@@ -39,7 +39,7 @@ const useCases = {
   getPokemonById: new GetPokemonByIdUseCase(pokemonRepository),
   getPokemonByName: new GetPokemonByNameUseCase(pokemonRepository),
   getPokemonByGeneration: new GetPokemonByGenerationUseCase(pokemonRepository),
-  getPokemonEvolutions: new GetPokemonEvolutionsUseCase(pokemonRepository, evolutionRepository),
+  getPokemonEvolutions: new GetPokemonEvolutionsUseCase(evolutionRepository),
   getPokemonMegaForms: new GetPokemonMegaFormsUseCase(evolutionRepository),
   getDreamTeam: new GetDreamTeamUseCase(dreamTeamRepository),
   addToDreamTeam: new AddToDreamTeamUseCase(dreamTeamRepository),

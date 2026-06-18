@@ -1,12 +1,11 @@
-import React from 'react';
-import { DreamTeamPokemonDto } from '../../../application/dto/DreamTeamDto';
+import type { DreamTeamPokemonDto } from '../../../../../application/dto/DreamTeamDto';
 
 type Props = {
   pokemon: DreamTeamPokemonDto;
   index: number;
 };
 
-export const DreamPokemonImage: React.FC<Props> = ({ pokemon, index }) => {
+export const DreamPokemonImage = ({ pokemon, index }: Props) => {
   return (
     <img
       className={`dream-pokemon dream-pokemon--${index + 1}`}

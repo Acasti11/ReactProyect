@@ -1,4 +1,4 @@
-import { DreamTeamRepository } from '../../domain/repositories/DreamTeamRepository';
+import type { DreamTeamRepository } from '../../domain/repositories/DreamTeamRepository';
 import { DreamTeamPokemon } from '../../domain/entities/DreamTeamPokemon';
 import { PokemonName } from '../../domain/value-objects/PokemonName';
 import { PokemonId } from '../../domain/value-objects/PokemonId';
