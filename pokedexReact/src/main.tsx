@@ -24,10 +24,6 @@ import {
 import { UseCasesProvider } from './infrastructure/ui/state/UseCasesContext'
 import { AppRouter } from './infrastructure/ui/router/AppRouter'
 
-// === Composición Root (Dependency Injection) ===
-// Aquí es el ÚNICO lugar donde se crean instancias concretas.
-// Las dependencias fluyen de afuera hacia adentro:
-// Infraestructura → Aplicación → UI
 
 // Repositorios (adaptadores de infraestructura)
 const pokemonRepository = new PokeApiPokemonRepository()
